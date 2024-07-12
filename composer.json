@@ -1,0 +1,18 @@
+{
+    "name": "cedricziel/leonardoai-php",
+    "description": "Leonardo.ai SDK for PHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cedricziel\\LeonardoaiPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cedric Ziel",
+            "email": "cedric@cedric-ziel.com"
+        }
+    ],
+    "require": {}
+}
