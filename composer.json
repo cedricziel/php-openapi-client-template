@@ -14,5 +14,21 @@
             "email": "cedric@cedric-ziel.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "jane-php/open-api-3": "^7.8",
+        "friendsofphp/php-cs-fixer": "^3.59"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "require": {
+        "jane-php/open-api-runtime": "^7.8"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": "true"
+        }
+    }
 }
