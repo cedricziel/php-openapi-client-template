@@ -1,6 +1,6 @@
-# leonardoai-php
+# php-openapi-client-template
 
-Leonardo AI SDK for PHP
+A small starter for OpenAPI-based client libraries.
 
 ## Install
 
