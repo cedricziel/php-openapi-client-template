@@ -33,15 +33,16 @@ jobs:
           ACTOR=$(echo $GITHUB_ACTOR | tr '[:upper:]' '[:lower:]')
           SAFE_NAME=$(echo $NAME | sed 's/[^a-zA-Z0-9]//g' | tr '[:upper:]' '[:lower:]')
           SAFE_ACTOR=$(echo $ACTOR | sed 's/[^a-zA-Z0-9]//g' | tr '[:upper:]' '[:lower:]')
-          GROUP="com.github.$SAFE_ACTOR.$SAFE_NAME"
 
           # Replace placeholders in the template-cleanup files
           sed -i "s/%NAME%/$NAME/g" .github/template-cleanup/*
           sed -i "s/%REPOSITORY%/${GITHUB_REPOSITORY/\//\\/}/g" .github/template-cleanup/*
-          sed -i "s/%GROUP%/$GROUP/g" .github/template-cleanup/*
 
           find src -type f -exec sed -i "s/myvendor/$SAFE_ACTOR/g" {} +
           find src -type f -exec sed -i "s/mynamespace/$SAFE_NAME/g" {} +
+
+          find .github/template-cleanup -type f -exec sed -i "s/myvendor/$SAFE_ACTOR/g" {} +
+          find .github/template-cleanup -type f -exec sed -i "s/mynamespace/$SAFE_NAME/g" {} +
 
           # Move content
           cp -R .github/template-cleanup/. .
