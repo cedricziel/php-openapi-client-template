@@ -12,11 +12,8 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      - uses: actions/checkout@v4
-     - name: OpenAPI Lint Checks
-       uses: nwestfall/openapi-action@v1.0.2
-       with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         file: openapi.json
+     - run: npm i -g @redocly/cli@latest
+     - run: redocly lint openapi.json
 
   build:
     needs: 
