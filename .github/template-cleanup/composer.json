@@ -1,5 +1,5 @@
 {
-    "name": "%NAME%/mynamespace",
+    "name": "myvendor/mynamespace",
     "description": "An API client",
     "type": "library",
     "license": "MIT",
