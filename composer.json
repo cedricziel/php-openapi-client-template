@@ -1,12 +1,12 @@
 {
-    "name": "cedricziel/leonardoai-php",
-    "description": "Leonardo.ai SDK for PHP",
+    "name": "myvendor/mynamespace",
+    "description": "An API client",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "CedricZiel\\LeonardoaiPhp\\": "src/",
-            "CedricZiel\\LeonardoaiPhp\\Generated\\": "generated/"
+            "myvendor\\mynamespace\\": "src/",
+            "myvendor\\mynamespace\\Generated\\": "generated/"
         }
     },
     "authors": [
