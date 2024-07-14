@@ -63,10 +63,10 @@ class ListPets extends \myvendor\mynamespace\Generated\Runtime\Client\BaseEndpoi
     {
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
-        if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
+        if (false === is_null($contentType) && (200 === $status && false !== mb_strpos($contentType, 'application/json'))) {
             return $serializer->deserialize($body, 'myvendor\mynamespace\Generated\Model\Pet[]', 'json');
         }
-        if (mb_strpos($contentType, 'application/json') !== false) {
+        if (false !== mb_strpos($contentType, 'application/json')) {
             return $serializer->deserialize($body, 'myvendor\mynamespace\Generated\Model\Error', 'json');
         }
     }

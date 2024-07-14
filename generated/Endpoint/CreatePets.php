@@ -53,7 +53,7 @@ class CreatePets extends \myvendor\mynamespace\Generated\Runtime\Client\BaseEndp
         if (201 === $status) {
             return null;
         }
-        if (mb_strpos($contentType, 'application/json') !== false) {
+        if (false !== mb_strpos($contentType, 'application/json')) {
             return $serializer->deserialize($body, 'myvendor\mynamespace\Generated\Model\Error', 'json');
         }
     }

@@ -31,12 +31,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
 
         public function supportsDenormalization(mixed $data, string $type, ?string $format = null, array $context = []): bool
         {
-            return $type === \myvendor\mynamespace\Generated\Model\Error::class;
+            return \myvendor\mynamespace\Generated\Model\Error::class === $type;
         }
 
         public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === myvendor\mynamespace\Generated\Model\Error::class;
+            return is_object($data) && myvendor\mynamespace\Generated\Model\Error::class === get_class($data);
         }
 
         public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
@@ -97,12 +97,12 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
 
         public function supportsDenormalization($data, $type, ?string $format = null, array $context = []): bool
         {
-            return $type === \myvendor\mynamespace\Generated\Model\Error::class;
+            return \myvendor\mynamespace\Generated\Model\Error::class === $type;
         }
 
         public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
         {
-            return is_object($data) && get_class($data) === myvendor\mynamespace\Generated\Model\Error::class;
+            return is_object($data) && myvendor\mynamespace\Generated\Model\Error::class === get_class($data);
         }
 
         public function denormalize($data, $type, $format = null, array $context = [])
