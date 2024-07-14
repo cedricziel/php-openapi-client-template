@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'openapi-file' => __DIR__ . '/open-api.json',
+    'openapi-file' => __DIR__ . '/openapi.json',
     'namespace' => 'CedricZiel\LeonardoAI\Generated',
     'directory' => __DIR__ . '/generated',
     'use-fixer' => true,
