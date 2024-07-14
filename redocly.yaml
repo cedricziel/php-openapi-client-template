@@ -1,2 +1,2 @@
 rules:
-  security-defined: warning
+  security-defined: warn
