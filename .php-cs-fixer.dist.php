@@ -10,8 +10,9 @@ return (new Config())
     ->setParallelConfig(ParallelConfigFactory::detect()) // @TODO 4.0 no need to call this manually
     ->setRiskyAllowed(true)
     ->setRules([
+        '@Symfony' => true,
+        '@PSR2' => true,
         '@PHP83Migration' => true,
-        '@PHP83Migration:risky' => true,
     ])
     ->setFinder(
         (new Finder())
