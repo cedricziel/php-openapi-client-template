@@ -51,19 +51,12 @@ jobs:
     - name: Generate API client
       run: php vendor/bin/jane-openapi generate
     
-    # Commit modified files
-    - name: Commit files
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "auto: generate client"
+    - name: Run php-cs-fixer
+      uses: docker://oskarstark/php-cs-fixer-ga
 
-    # Push changes
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+    - uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        commit_message: Apply php-cs-fixer changes
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
