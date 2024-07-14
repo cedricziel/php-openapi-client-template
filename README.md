@@ -2,36 +2,16 @@
 
 A small starter for OpenAPI-based client libraries.
 
-## Install
+## How to use this repository
 
-```bash
-composer require cedricziel/leonardoai-php
-```
+This template uses [Jane PHP](https://github.com/janephp/janephp) to generate a
+PHP client from an OpenAPI specification.
 
-## Usage
+In order to benefit from it, you just have to use the "Use Template" functionality on GitHub to use this as a template for your own repo.
 
-You need an API key from Leonardo
+After the repo has been created, an initial action will bring the repo into shape.
 
-### Client creation
-
-```php
-$authenticationRegistry = new AuthenticationRegistry([new ApiKeyAuthentication('my-api-key')]);
-$client = Client::create(null, [$authenticationRegistry]);
-```
-
-### Get current user
-
-```php
-$client->getUserSelf();
-```
-
-### Image Generation: Create
-
-```php
-$body = GenerationsPostBody();
-$body->setPrompt('A cat on a tree');
-$res = $client->createGeneration($body);
-```
+At that point, you can just replace the contents of the openapi.json file with your own spec and on push, a GitHub action will regenerate the client code.
 
 ## License
 
