@@ -8,7 +8,7 @@ declare(strict_types=1);
  * Do no edit it directly.
  */
 
-namespace CedricZiel\LeonardoAI\Generated\Runtime\Normalizer;
+namespace myvendor\mynamespace\Generated\Runtime\Normalizer;
 
 use Jane\Component\JsonSchemaRuntime\Reference;
 use Symfony\Component\HttpKernel\Kernel;

@@ -8,7 +8,7 @@ declare(strict_types=1);
  * Do no edit it directly.
  */
 
-namespace CedricZiel\LeonardoAI\Generated\Runtime\Client;
+namespace myvendor\mynamespace\Generated\Runtime\Client;
 
 use Symfony\Component\OptionsResolver\Options;
 
