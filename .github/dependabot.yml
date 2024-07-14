@@ -9,6 +9,8 @@ updates:
       interval: "weekly"
     assignees:
     - cedricziel
+    commit-message:
+      prefix: "fix: "
 
   - package-ecosystem: "composer"
     directory: "/"
@@ -16,9 +18,13 @@ updates:
       interval: "weekly"
     assignees:
     - cedricziel
+    commit-message:
+      prefix: "fix: "
   - package-ecosystem: "composer"
     directory: ".github/template-cleanup"
     schedule:
       interval: "weekly"
     assignees:
     - cedricziel
+    commit-message:
+      prefix: "fix: "
