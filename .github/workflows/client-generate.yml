@@ -20,6 +20,7 @@ jobs:
      - run: redocly lint openapi.json
 
   build:
+    name: Generate Client
     needs: 
       - lint
 
