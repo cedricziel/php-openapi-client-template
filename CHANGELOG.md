@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/cedricziel/php-openapi-client-template/compare/v1.0.0...v1.0.1) (2024-07-14)
+
+
+### Bug Fixes
+
+* set package vendor correctly ([#4](https://github.com/cedricziel/php-openapi-client-template/issues/4)) ([aae1b5c](https://github.com/cedricziel/php-openapi-client-template/commit/aae1b5c79b84942e25ea741f962a3fa5115d738b))
+
 ## 1.0.0 (2024-07-14)
 
 
