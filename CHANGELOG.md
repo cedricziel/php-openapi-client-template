@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/cedricziel/php-openapi-client-template/compare/v1.0.1...v1.0.2) (2024-08-07)
+
+
+### Bug Fixes
+
+* limit gen ([#6](https://github.com/cedricziel/php-openapi-client-template/issues/6)) ([6a1a258](https://github.com/cedricziel/php-openapi-client-template/commit/6a1a258ccc741cfd7f2ef3371a120fa3e94e2f12))
+
 ## [1.0.1](https://github.com/cedricziel/php-openapi-client-template/compare/v1.0.0...v1.0.1) (2024-07-14)
 
 
