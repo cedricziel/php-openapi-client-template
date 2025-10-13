@@ -20,7 +20,7 @@ class Client extends Runtime\Client\Client
      *
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      *
-     * @return \myvendor\mynamespace\Generated\Model\Pet[]|\myvendor\mynamespace\Generated\Model\Error|\Psr\Http\Message\ResponseInterface|null
+     * @return Model\Pet[]|Model\Error|\Psr\Http\Message\ResponseInterface|null
      */
     public function listPets(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
