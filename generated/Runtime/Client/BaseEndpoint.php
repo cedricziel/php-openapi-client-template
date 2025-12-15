@@ -17,10 +17,10 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 abstract class BaseEndpoint implements Endpoint
 {
-    protected $formParameters = [];
-    protected $queryParameters = [];
-    protected $headerParameters = [];
-    protected $body;
+    protected array $formParameters = [];
+    protected array $queryParameters = [];
+    protected array $headerParameters = [];
+    protected mixed $body;
 
     abstract public function getMethod(): string;
 
@@ -40,11 +40,20 @@ abstract class BaseEndpoint implements Endpoint
     public function getQueryString(): string
     {
         $optionsResolved = $this->getQueryOptionsResolver()->resolve($this->queryParameters);
-        $optionsResolved = array_map(function ($value) {
-            return null !== $value ? $value : '';
+        $optionsResolved = array_map(static function ($value) {
+            return $value ?? '';
         }, $optionsResolved);
+        $allowReserved = $this->getQueryAllowReserved();
+        $queryParameters = [];
+        foreach ($optionsResolved as $key => $value) {
+            if (in_array($key, $allowReserved, true)) {
+                $queryParameters[] = rawurlencode($key).'='.$value;
+            } else {
+                $queryParameters[] = rawurlencode($key).'='.rawurlencode($value);
+            }
+        }
 
-        return http_build_query($optionsResolved, '', '&', PHP_QUERY_RFC3986);
+        return implode('&', $queryParameters);
     }
 
     public function getHeaders(array $baseHeaders = []): array
@@ -55,6 +64,11 @@ abstract class BaseEndpoint implements Endpoint
     protected function getQueryOptionsResolver(): OptionsResolver
     {
         return new OptionsResolver();
+    }
+
+    protected function getQueryAllowReserved(): array
+    {
+        return [];
     }
 
     protected function getHeadersOptionsResolver(): OptionsResolver

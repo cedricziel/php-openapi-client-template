@@ -20,7 +20,7 @@ class Client extends Runtime\Client\Client
      *
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      *
-     * @return \myvendor\mynamespace\Generated\Model\Pet[]|\myvendor\mynamespace\Generated\Model\Error|\Psr\Http\Message\ResponseInterface|null
+     * @return ($fetch is 'object' ? Model\Pet[]|Model\Error|null : \Psr\Http\Message\ResponseInterface)
      */
     public function listPets(array $queryParameters = [], string $fetch = self::FETCH_OBJECT)
     {
@@ -30,7 +30,7 @@ class Client extends Runtime\Client\Client
     /**
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      *
-     * @return Model\Error|\Psr\Http\Message\ResponseInterface|null
+     * @return ($fetch is 'object' ? Model\Error|null : \Psr\Http\Message\ResponseInterface)
      */
     public function createPets(Model\Pet $requestBody, string $fetch = self::FETCH_OBJECT)
     {
@@ -41,7 +41,7 @@ class Client extends Runtime\Client\Client
      * @param string $petId The id of the pet to retrieve
      * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      *
-     * @return Model\Pet|Model\Error|\Psr\Http\Message\ResponseInterface|null
+     * @return ($fetch is 'object' ? Model\Pet|Model\Error|null : \Psr\Http\Message\ResponseInterface)
      */
     public function showPetById(string $petId, string $fetch = self::FETCH_OBJECT)
     {
